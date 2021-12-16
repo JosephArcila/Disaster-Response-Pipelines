@@ -1,4 +1,5 @@
 # Disaster Response Pipeline Project
+A data pipeline to prepare message data from major natural disasters around the world with machine learning pipeline to categorize emergency messages based on the needs communicated by the sender.
 
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
