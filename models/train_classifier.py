@@ -67,16 +67,18 @@ def build_model():
     OUTPUT:
     cv - model pipeline from the gridsearch object
     """
+    # Building a machine learning pipeline
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
         ('clf', MultiOutputClassifier(DecisionTreeClassifier()))
     ])
-                           
+    # Using grid search to find better parameters                       
     parameters = {
         'clf__estimator__criterion': ['gini','entropy']
     }
-
+    
+    # Fine tuning the model for accuracy, precision and recall
     scoring = {"Accuracy": "accuracy", "Precision": make_scorer(precision_score, average='macro', zero_division=0), 
            "Recall": make_scorer(recall_score, average='macro', zero_division=0), 
            "F1": make_scorer(f1_score, average='macro', zero_division=0)}
