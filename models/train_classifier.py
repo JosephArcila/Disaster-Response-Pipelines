@@ -75,8 +75,12 @@ def build_model():
     parameters = {
         'clf__estimator__criterion': ['gini','entropy']
     }
+
+    scoring = {"Accuracy": "accuracy", "Precision": make_scorer(precision_score, average='macro', zero_division=0), 
+           "Recall": make_scorer(recall_score, average='macro', zero_division=0), 
+           "F1": make_scorer(f1_score, average='macro', zero_division=0)}
                            
-    cv = GridSearchCV(pipeline, param_grid=parameters)
+    cv = GridSearchCV(pipeline, param_grid=parameters, verbose=3, cv=2, return_train_score=True, refit='F1', scoring = scoring))
 
     return cv
 
