@@ -38,7 +38,7 @@ def clean_data(df):
     # Convert category values to just numbers 0 or 1
     for column in categories:
         # set each value to be the last character of the string
-        categories[column] = [row[1] for row in categories[column].str.split('-')]
+        categories[column] = [int(row[1]) for row in categories[column].str.split('-')]
         
         # convert column from string to numeric
         categories[column] = pd.to_numeric(categories[column])
