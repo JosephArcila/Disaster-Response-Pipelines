@@ -7,7 +7,7 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import classification_report, make_scorer
+from sklearn.metrics import classification_report, make_scorer, precision_score, recall_score, f1_score
 from sklearn.tree import DecisionTreeClassifier
 import joblib
 import re
@@ -18,6 +18,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('punkt')
 
 
 def load_data(database_filepath):
