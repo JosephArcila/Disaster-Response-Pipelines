@@ -42,7 +42,7 @@ Loads data from the SQLite database -> Splits the dataset into training and test
 - classifier.pkl: Saved model 
 
 ## Data
-<img src="https://user-images.githubusercontent.com/39535338/146665047-14eb521c-163d-41ad-9e45-6ee3d665ceda.png" alt="drawing" width="400"/>
+<img src="https://user-images.githubusercontent.com/39535338/146665047-14eb521c-163d-41ad-9e45-6ee3d665ceda.png" alt="drawing" width="600"/>
 The dataset is divided into two csv files
 For the data cleaning I combined the messages and categories datasets and merged using the common id, removed duplicates and wrong values.
 
